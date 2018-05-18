@@ -24,7 +24,7 @@
     height: 20px;
     width: 20px;
     border-radius: 20px;
-    background-color: rgb(255, 162, 62);
+    background-color: rgb(247, 94, 247);
     position: absolute;
 }
 
@@ -39,7 +39,7 @@
     float: left;
     width: 15px;
     height: 70px;
-    background-color: rgb(121, 235, 247);
+    background-color: rgb(255, 162, 62);
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -49,7 +49,7 @@
     float: right;
     width: 15px;
     height: 70px;
-    background-color: rgb(121, 235, 247);
+    background-color: rgb(255, 162, 62);
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
