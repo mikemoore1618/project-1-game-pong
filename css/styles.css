@@ -1,0 +1,49 @@
+
+#container {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 700px;
+    width: 900px;
+}
+
+#scoreboard {
+    height: 100px;
+}
+
+#gameboard {
+    height: 600px;
+    width: 900px;
+    border: solid rgb(121, 235, 247);
+}
+
+#ball {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(255, 162, 62);
+    position: absolute;
+}
+
+#vertical-line {
+    border-left: solid rgb(121, 235, 247);
+    height: 600px;
+    margin-left: 450px;
+    position: absolute;
+}
+
+.player1 {
+    float: left;
+}
+
+.player2 {
+    float: right;
+}
+
+h1 {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 30px;
+}
