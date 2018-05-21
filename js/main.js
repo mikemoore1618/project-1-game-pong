@@ -1,28 +1,28 @@
 // Js for ball movement
 
 // Setting parameters for movement
-// var x = 0;
-// var y = 0;
-// var r = 10;//radius
-// var dx = 13;//x distance interval
-// var dy = 11;//y distance interval
-// var width = 900;
-// var height = 600; 
-// var speed = 600;//doesnt go anything when i change it
+var x = 0;
+var y = 0;
+var r = 10;//radius
+var dx = 13;//x distance interval
+var dy = 11;//y distance interval
+var speed = 600;//doesnt go anything when i change it
 
-// function draw() {
 //     // movement of ball?
-//         ball(x, y, r);
-//             if (x + dx > width|| x + dx < 0)
-//             dx = -dx;
-//             if (y + dy > height || y + dy < 0)
-//             dy = -dy;
-//             x += dx;
-//             y += dy;
-//         }
-    
-            //set top and left porperties based on this formula
-            //set left paddle to 
+        ball(x, y, r);
+            if (x + dx > width|| x + dx < 0)
+            dx = -dx;
+            if (y + dy > height || y + dy < 0)
+            dy = -dy;
+            x += dx;
+            y += dy;
+        }
+
+
+//movement of paddles
+var $ball = $("#ball");
+var $start = $("#start")
+
 
 $(document).keydown(function(e){
     switch (e.which){
@@ -51,4 +51,10 @@ $(document).keydown(function(e){
         });
     break;
     }
+        });
+
+$(document).ready(function(){
+    $start.click(function(){
+        $ball.animate({left: '+=93', top: '+=87'}, 1000);
+            });
         });
