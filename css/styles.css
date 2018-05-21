@@ -18,6 +18,7 @@
     height: 600px;
     width: 900px;
     border: solid rgb(121, 235, 247);
+    position: relative;
 }
 
 #ball {
@@ -36,23 +37,21 @@
 }
 
 #paddle1 {
-    float: left;
     width: 15px;
     height: 70px;
     background-color: rgb(255, 162, 62);
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }
 
 #paddle2 {
-    float: right;
     width: 15px;
     height: 70px;
     background-color: rgb(255, 162, 62);
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
     
 }
 
