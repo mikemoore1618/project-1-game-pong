@@ -1,10 +1,8 @@
 
+body {
+    text-align: center;
+}
 #container {
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     margin: auto;
     height: 700px;
     width: 900px;
@@ -12,6 +10,11 @@
 
 #scoreboard {
     height: 100px;
+}
+
+#start {
+    margin: autol
+    
 }
 
 #gameboard {
@@ -37,22 +40,20 @@
     position: absolute;
 }
 
-#paddle1 {
+.paddle {
     width: 15px;
     height: 70px;
     background-color: rgb(255, 162, 62);
     position: absolute;
+    top: 255px;
+}
+
+#paddle1 {
     left: 10px;
-    top: 10px;
 }
 
 #paddle2 {
-    width: 15px;
-    height: 70px;
-    background-color: rgb(255, 162, 62);
-    position: absolute;
     right: 10px;
-    top: 10px;
     
 }
 
