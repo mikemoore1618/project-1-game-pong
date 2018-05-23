@@ -1,6 +1,5 @@
 const $gameboard = $('#gameboard');
 const $scoreboard = $('#scoreboard');
-var $score = 0
 const $ball = $('#ball');
 const $start = $('#start');
 const $doc = $(document);
@@ -9,12 +8,7 @@ const $paddle2 = $('#paddle2');
 const $paddle = $('.paddle');
 const $player1 = $('#player1');
 const $player2 = $('#player2');
-
-// const moveUpLeft = {left: '-=2', top:'-=1'};  
-// const moveDownLeft = {left: '-=2', top:'+=1'};
-// const moveUpRight = {left: '+=2', top:'-=1'};  
-// const moveDownRight = {left: '+=2', top:'+=1'}; 
-
+let $score = 0
 let ballRight = -1
 let ballDown = -1
 
@@ -34,59 +28,51 @@ $doc.keydown(function(e){
     case 222:    // ' key
         if (parseInt($pos2) >= upperBoundLimit) {
             $paddle2.finish().animate({ top: '-=50'});}
-         else {
-            console.log('At limit!')
-        }
     break;     
 
     case 191:    // ? key
         if (parseInt($pos2) <= lowerBoundLimit) {
         $paddle2.finish().animate({top: '+=50'});}
-        else {
-            console.log('At limit!')
-        }
     break;
 
     case 65:    //a key
          if (parseInt($pos1) >= upperBoundLimit) {
         $paddle1.finish().animate({top: '-=50'});}
-        else {
-            console.log('At limit!')
-        }
     break;  
 
     case 90:    //z key
     if (parseInt($pos1) <= lowerBoundLimit) {
         $paddle1.finish().animate({top: '+=50'});}
-        else {
-            console.log('At limit!')
-        }
     break;
     }
 })
 
-///////////make ball move
+///////////make ball move and bounce
 
-$start.on("click", $startGame)
+
 
 function moveBall()  {
 
     $ball.css({left: `+=${2 * ballRight}`, top:`+=${1 * ballDown}`});
 
     // top wall
-    if(($ball.offset().top <= $gameboard.offset().top)) {
+    if($ball.offset().top <= $gameboard.offset().top) {
         ballDown = 1
     }
     //left wall
-    if (($ball.offset().left <= $paddle1.offset().left + 15)){
+    if ($ball.offset().left <= $paddle1.offset().left + $paddle1.width()
+        && $ball.offset().top + $ball.width()/2 <= $paddle1.offset().top + $paddle1.height()
+        && $ball.offset().top + $ball.width()/2 >= $paddle1.offset().top ){
         ballRight = 1
     }
     // bottom wall
-    if(($ball.offset().top + 20 >= $gameboard.offset().top + 600)) {
+    if($ball.offset().top + $ball.width() >= $gameboard.offset().top + $gameboard.height()) {
         ballDown = -1
     }
     // right wall
-    if (($ball.offset().left + 20 >= $paddle2.offset().left)){
+    if ($ball.offset().left + $ball.width() >= $paddle2.offset().left
+        && $ball.offset().top + $ball.width()/2 <= $paddle2.offset().top + $paddle2.height()
+        && $ball.offset().top + $ball.width()/2 >= $paddle2.offset().top ){
         ballRight = -1
     }
 
@@ -94,28 +80,15 @@ function moveBall()  {
 }
 
 function $startGame() {
-    
-    setInterval(moveBall, 1); ////the interval is what was causing ball to bounce rapidly
-    $paddle.css("top","250px");
-    function $startGame() {
-        $start.on("click", moveBall()) 
-      }
+    setInterval(moveBall, 10); ////the interval is what was causing ball to bounce rapidly
+    $paddle.css("top","250px"); 
     }
+
+    $start.on("click", $startGame)
 
 /////START HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /////works if comment below code out
-
-function changeDirections() {
-    const $ballPos = $ball.css('top');
-    const upperBoundLimit = 50;
-    const lowerBoundLimit = 450;
-
-    parseInt($ballPos) >= upperBoundLimit;
-    console.log("hit");
-    $ball.animate(moveDownLeft);a
-aa
-    }   
   
 
 //// 1. get ball to bounce off player 1 and 2 paddles

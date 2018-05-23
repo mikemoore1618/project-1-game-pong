@@ -13,7 +13,16 @@ body {
 }
 
 #start {
-    margin: autol
+    margin: auto;
+    margin-top: 20px;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(155, 250, 60);
+    border: none;
+    border-radius: 50px;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 12px;
+    outline: none;
     
 }
 
@@ -32,6 +41,17 @@ body {
     left: 442px;
     top: 100px; 
     position: absolute;
+    
+}
+
+#circle {
+    height: 300px;
+    width: 300px;
+    border-radius: 300px;
+    border: solid rgb(121, 235, 247);
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 150px;
     
 }
 
