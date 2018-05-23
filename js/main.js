@@ -1,11 +1,13 @@
 const $scoreboard = $('#scoreboard');
+var $score = 0
 const $ball = $('#ball');
 const $start = $('#start');
 const $doc = $(document);
 const $paddle1 = $('#paddle1');
 const $paddle2 = $('#paddle2');
 const $paddle = $('.paddle');
-const $ballPos = $ball.css('top');
+const $player1 = $('#player1');
+const $player2 = $('#player2');
 
 const moveUpLeft = {left: '-=2', top:'-=1'};  
 const moveDownLeft = {left: '-=2', top:'+=1'};
@@ -64,32 +66,62 @@ $start.on("click", $startGame)
 
 function $startGame() {
     function $moveBall()  { 
-        // const upperBoundLimit = 0;
-        // const lowerBoundLimit = 530;
-
         $ball.finish().animate(moveUpLeft);
     }
-    setInterval($moveBall, 1);////what is causing ball to bounce rapidly
+    setInterval($moveBall, 1); ////the interval is what was causing ball to bounce rapidly
     $paddle.css("top","250px");
     function $startGame() {
         $start.on("click", $moveBall()) 
       }
     }
 
-/////START HERE 
-/////works is comment below code out
+/////START HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/////works if comment below code out
 
 function changeDirections() {
-(parseInt($ballPos)) >= upperBoundLimit;
-console.log("hit");
-$ball.animate(moveDownLeft);
-function changeDirections();
+    const $ballPos = $ball.css('top');
+    const upperBoundLimit = 50;
+    const lowerBoundLimit = 450;
+
+    parseInt($ballPos) >= upperBoundLimit;
+    console.log("hit");
+    $ball.animate(moveDownLeft);a
+aa
     }   
+  
 
-
-         
 //// 1. get ball to bounce off player 1 and 2 paddles
+
+
 //// 2. log a point on correct players side when ball hits left or right side of screen
+function scorePoint() {
+    const $ballPos = $ball.css('left');
+    const leftBoundLimit = 0;
+    const rightBoundLimit = 900;
+    
+    (parseInt($ballPos)) <= leftBoundLimit;
+    console.log('point!');
+
+    player2.text(score++);
+
+    (parseInt($ballPos)) >= rightBoundLimit;
+    console.log('point!');
+
+    player1.text(score++);
+}
+
 //// 3. reset ball after point is scored and go in opposite direction
-//// 4. declare winner after 5 points are scored
-//// 5. add control to game page
+//// if else statement: 
+//// if direction is left, go right
+//// if direction is right, go left
+
+// //// 4. declare winner after 5 points are scored
+
+function declareWinner() {
+    score >= 5;
+    alert('winner!')
+}
+
+//// 5. add controls to game page
+
