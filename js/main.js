@@ -1,108 +1,95 @@
-const $scoreboard = $("#scoreboard")
-const $ball = $("#ball");
-const $start = $("#start")
-const $doc = $(document)
-const $paddle1 = $('#paddle1')
-const $paddle2 = $('#paddle2')
-const $paddle = $('.paddle')
+const $scoreboard = $('#scoreboard');
+const $ball = $('#ball');
+const $start = $('#start');
+const $doc = $(document);
+const $paddle1 = $('#paddle1');
+const $paddle2 = $('#paddle2');
+const $paddle = $('.paddle');
+const $ballPos = $ball.css('top');
+
+const moveUpLeft = {left: '-=2', top:'-=1'};  
+const moveDownLeft = {left: '-=2', top:'+=1'};
+const moveUpRight = {left: '+=2', top:'-=1'};  
+const moveDownRight = {left: '+=2', top:'+=1'}; 
 
 var player1Points = 0;
 var player2Points = 0;
 
-
+/////make paddles move and stop in boundaries
 
 $doc.keydown(function(e){
-    let $pos1 = $paddle1.css("top");
-    let $pos2 = $paddle2.css("top"); 
-    const upperBoundLimit = 60;
-    const lowerBoundLimit = 470;
+    let $pos1 = $paddle1.css('top');
+    let $pos2 = $paddle2.css('top'); 
+    const upperBoundLimit = 50;
+    const lowerBoundLimit = 450;
 
     switch (e.which) { 
-    case 38:    //up arrow key
+    case 222:    // ' key
         if (parseInt($pos2) >= upperBoundLimit) {
-            $paddle2.finish().animate({ top: "-=50" });}
+            $paddle2.finish().animate({ top: '-=50'});}
          else {
-            console.log("At limit!")
+            console.log('At limit!')
         }
     break;     
 
-    case 40:    //down arrow key
+    case 191:    // ? key
         if (parseInt($pos2) <= lowerBoundLimit) {
-        $paddle2.finish().animate({top: "+=50"});}
+        $paddle2.finish().animate({top: '+=50'});}
         else {
-            console.log("At limit!")
+            console.log('At limit!')
         }
     break;
 
     case 65:    //a key
          if (parseInt($pos1) >= upperBoundLimit) {
-        $paddle1.finish().animate({top: "-=50"});}
+        $paddle1.finish().animate({top: '-=50'});}
         else {
-            console.log("At limit!")
+            console.log('At limit!')
         }
     break;  
 
     case 90:    //z key
     if (parseInt($pos1) <= lowerBoundLimit) {
-        $paddle1.finish().animate({top: "+=50"});}
+        $paddle1.finish().animate({top: '+=50'});}
         else {
-            console.log("At limit!")
+            console.log('At limit!')
         }
     break;
     }
 })
 
+///////////make ball move
+
+$start.on("click", $startGame)
+
+function $startGame() {
+    function $moveBall()  { 
+        // const upperBoundLimit = 0;
+        // const lowerBoundLimit = 530;
+
+        $ball.finish().animate(moveUpLeft);
+    }
+    setInterval($moveBall, 1);////what is causing ball to bounce rapidly
+    $paddle.css("top","250px");
+    function $startGame() {
+        $start.on("click", $moveBall()) 
+      }
+    }
+
+/////START HERE 
+/////works is comment below code out
+
+function changeDirections() {
+(parseInt($ballPos)) >= upperBoundLimit;
+console.log("hit");
+$ball.animate(moveDownLeft);
+function changeDirections();
+    }   
 
 
-
-///////////make ball move?/////////////////////////////////
-
-// use set interval, unless it hits wall, then do this
-
-
-
-
-
-        
-
-        ///////////////////
-
-    //     float x = 400;
-    //     float y = 300;
-
-    //     float ySpeed = 5;
-    //     float xSpeed = 5;
-
-    //    function bounceBall() { 
-    //        // bakckground(0);
-    //         x += xSpeed;
-    //         if ($ball.x > 900 || $ball.x < 0){
-    //             xSpeed *= -1;
-    //         }
-    //         y += ySpeed;
-    //         if ($ball.y > 600 || $ball.y < 0){
-    //             ySpeed *= -1;
-    //         }
-
-    //         ellipse (x, y, 50, 50)
-    //     }
-
-    // Js for ball movement
-
-// Setting parameters for movement
-// var x = 0;
-// var y = 0;
-// var r = 10;//radius
-// var dx = 13;//x distance interval
-// var dy = 11;//y distance interval
-// var speed = 600;//doesnt go anything when i change it
-
-//     // movement of ball?
-        // ball(x, y, r);
-        //     if (x + dx > width|| x + dx < 0)
-        //     dx = -dx;
-        //     if (y + dy > height || y + dy < 0)
-        //     dy = -dy;
-        //     x += dx;
-        //     y += dy;
-        // }
+         
+//// 1. get ball to bounce off player 1 and 2 paddles
+//// 2. log a point on correct players side when ball hits left or right side of screen
+//// 3. reset ball after point is scored and go in opposite direction
+//// 4. declare winner after 5 points are scored
+//// 5. add control to game page
