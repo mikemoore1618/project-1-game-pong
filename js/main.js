@@ -1,3 +1,4 @@
+const $gameboard = $('#gameboard');
 const $scoreboard = $('#scoreboard');
 var $score = 0
 const $ball = $('#ball');
@@ -9,10 +10,14 @@ const $paddle = $('.paddle');
 const $player1 = $('#player1');
 const $player2 = $('#player2');
 
-const moveUpLeft = {left: '-=2', top:'-=1'};  
-const moveDownLeft = {left: '-=2', top:'+=1'};
-const moveUpRight = {left: '+=2', top:'-=1'};  
-const moveDownRight = {left: '+=2', top:'+=1'}; 
+// const moveUpLeft = {left: '-=2', top:'-=1'};  
+// const moveDownLeft = {left: '-=2', top:'+=1'};
+// const moveUpRight = {left: '+=2', top:'-=1'};  
+// const moveDownRight = {left: '+=2', top:'+=1'}; 
+
+let ballRight = -1
+let ballDown = -1
+
 
 var player1Points = 0;
 var player2Points = 0;
@@ -64,14 +69,36 @@ $doc.keydown(function(e){
 
 $start.on("click", $startGame)
 
-function $startGame() {
-    function $moveBall()  { 
-        $ball.finish().animate(moveUpLeft);
+function moveBall()  {
+
+    $ball.css({left: `+=${2 * ballRight}`, top:`+=${1 * ballDown}`});
+
+    // top wall
+    if(($ball.offset().top <= $gameboard.offset().top)) {
+        ballDown = 1
     }
-    setInterval($moveBall, 1); ////the interval is what was causing ball to bounce rapidly
+    //left wall
+    if (($ball.offset().left <= $paddle1.offset().left + 15)){
+        ballRight = 1
+    }
+    // bottom wall
+    if(($ball.offset().top + 20 >= $gameboard.offset().top + 600)) {
+        ballDown = -1
+    }
+    // right wall
+    if (($ball.offset().left + 20 >= $paddle2.offset().left)){
+        ballRight = -1
+    }
+
+    // paddle
+}
+
+function $startGame() {
+    
+    setInterval(moveBall, 1); ////the interval is what was causing ball to bounce rapidly
     $paddle.css("top","250px");
     function $startGame() {
-        $start.on("click", $moveBall()) 
+        $start.on("click", moveBall()) 
       }
     }
 
