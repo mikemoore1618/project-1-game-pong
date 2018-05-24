@@ -22,7 +22,7 @@ function addPoint1() {
 function didPlayer1Win () {
     if (score1 >= 6) {
         alert("Player 1 Wins!")};
-        resetGame()
+        // resetGame()
 }
 function addPoint2() { 
     score2= score2++
@@ -33,21 +33,21 @@ function addPoint2() {
 function didPlayer2Win () {
     if (score2 >= 6) {
         alert("Player 2 Wins!")};
-        resetGame()
-        }
+        // resetGame()
+ }
 
-function resetGame () {
-    $ball.css({left: 442, top: 300});
-    $paddle.css("top","250px");  
-    clearInterval(ballMove),//stop moving 
-    disableBallMove()
-    // $player1.text(0)
-    // $player2.text(0)
-}
+// function resetGame () {
+//     $ball.css({left: 442, top: 300});
+//     $paddle.css("top","250px");  
+//     clearInterval(ballMove),//stop moving 
+//     disableBallMove()
+//     // $player1.text(0)
+//     // $player2.text(0)
+// }
 
-function disableBallMove() {
-    $start.off("click", startGame)
-}
+// function disableBallMove() {
+//     $start.off("click", startGame)
+// }
 
 $doc.keydown(function(e){
     let $pos1 = $paddle1.css('top');
