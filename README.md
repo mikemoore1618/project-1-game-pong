@@ -24,7 +24,7 @@ Explanations of the technologies used (HTML, CSS, jQuery, and any other librarie
 
 ### Concept
 
-A wireframe of the initial idea. You could take a screenshot of a wireframe using Gliffy, Balsamiq, or even just draw it on a napkin and snap a photo!
+![alt text](https://i.imgur.com/rLoeCQG.jpg)
 
 ### Known Bugs
 
