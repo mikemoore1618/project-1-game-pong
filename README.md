@@ -18,11 +18,16 @@ Each player controls a paddle by moving it vertically up and down the left or ri
 
 - Player 2 controls their paddle up with the **[']** key and down with the **[/]** key.
 
-Explanations of the technologies used (HTML, CSS, jQuery, and any other libraries or technologies.)
-A wireframe of the initial idea. You could take a screenshot of a wireframe using Gliffy, Balsamiq, or even just draw it on a napkin and snap a photo!
-A Backlog: Descriptions of any unsolved problems or major hurdles you had to overcome.
+### Tech
 
+Explanations of the technologies used (HTML, CSS, jQuery, and any other libraries or technologies.)
+
+### Concept
+
+A wireframe of the initial idea. You could take a screenshot of a wireframe using Gliffy, Balsamiq, or even just draw it on a napkin and snap a photo!
 
 ### Known Bugs
 
-When player 1 or player 2 misses the ball, but comes really close to hitting it, the ball glitches and acts like it was hit, but still scores a point. 
+-A Backlog: Descriptions of any unsolved problems or major hurdles you had to overcome.
+
+- When player 1 or player 2 misses the ball, but comes really close to hitting it, the ball glitches and acts like it was hit, but still scores a point. 
