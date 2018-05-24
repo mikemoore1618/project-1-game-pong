@@ -22,10 +22,10 @@ Each player controls a paddle by moving it vertically up and down the left or ri
 
 Explanations of the technologies used:
 
-- HTML 
-- CSS 
-- JavaScript
-- jQuery
+- HTML- A markup language used to structure text and multimedia documents and to set up hypertext links between documents, used extensively on the World Wide Web.
+- CSS- Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+- JavaScript- often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.
+- jQuery- a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. It is free, open-source software using the permissive MIT License. Web analysis indicates that it is the most widely deployed JavaScript library by a large margin
 
 ### Concept
 
