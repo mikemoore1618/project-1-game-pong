@@ -34,5 +34,3 @@ Explanations of the technologies used:
 ### Known Bugs
 
 -A Backlog: Descriptions of any unsolved problems or major hurdles you had to overcome.
-
-- When player 1 or player 2 misses the ball, but comes really close to hitting it, the ball glitches and acts like it was hit, but still scores a point. 
