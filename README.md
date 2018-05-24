@@ -31,6 +31,6 @@ Explanations of the technologies used:
 
 ![alt text](https://i.imgur.com/rLoeCQG.jpg)
 
-### Known Bugs
+### Backlog
 
--A Backlog: Descriptions of any unsolved problems or major hurdles you had to overcome.
+My biggest hurdle was getting the ball to bounce around the gamebnpard. After I got that, it was pretty much smooth sailing. features I would like to add in the future are different difficulty levels and a 1 player mode where you can battle an AI bot. 
