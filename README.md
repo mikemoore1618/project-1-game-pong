@@ -33,4 +33,4 @@ Explanations of the technologies used:
 
 ### Backlog
 
-My biggest hurdle was getting the ball to bounce around the gamebnpard. After I got that, it was pretty much smooth sailing. features I would like to add in the future are different difficulty levels and a 1 player mode where you can battle an AI bot. 
+My biggest hurdle was getting the ball to bounce around the gameboard. After I got that, it was pretty much smooth sailing. Features I would like to add in the future are different difficulty levels and a 1 player mode where you can battle an AI bot. 
