@@ -14,8 +14,9 @@ Each player controls a paddle by moving it vertically up and down the left or ri
 
 <h2>Controls</h2> 
 
-Player 1 controls their paddle up with the <bold>[a]</bold> key and down with the [z] key.
-Player 2 controls their paddle up with the ['] key and down with the [/] key.
+Player 1 controls their paddle up with the <h5>[a]</h5> key and down with the <h5>[z]</h5> key.
+
+Player 2 controls their paddle up with the <h5>[']</h5> key and down with the <h5>[/]</h5> key.
 
 <h2>Known Bugs</h2> 
 
