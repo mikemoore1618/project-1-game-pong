@@ -1,5 +1,4 @@
-# project-1-game-pong
-This is a repository for our first project at General Assembly Web Development Fundamentals. The assignment was to create a game and the game I chose to make was pong. Technologies I used are HTML, CSS, JavaScript, and JQuery.
+https://mikemoore1618.github.io/project-1-game-pong/
 
 <h1>Pong</h1>
 
