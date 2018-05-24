@@ -20,7 +20,12 @@ Each player controls a paddle by moving it vertically up and down the left or ri
 
 ### Tech
 
-Explanations of the technologies used (HTML, CSS, jQuery, and any other libraries or technologies.)
+Explanations of the technologies used:
+
+- HTML 
+- CSS 
+- JavaScript
+- jQuery
 
 ### Concept
 
