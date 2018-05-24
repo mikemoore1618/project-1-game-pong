@@ -8,10 +8,13 @@ const $paddle2 = $('#paddle2');
 const $paddle = $('.paddle');
 const $player1 = $('#player1');
 const $player2 = $('#player2');
-let score1 = 1
-let score2 = 1
-let ballRight = -1
-let ballDown = -1
+let score1 = 0;
+let score2 = 0;
+let ballRight = -1;
+let ballDown = -1;
+let ballSpeed 
+let blip1 = new Audio("./audio/pongblip1.wav")
+let blip2 = new Audio("./audio/pongblip2.wav")
 
 function addPoint1() {
     score1 = score1++
@@ -49,6 +52,8 @@ function didPlayer2Win () {
 //     $start.off("click", startGame)
 // }
 
+    $start.on("click", startGame)
+
 $doc.keydown(function(e){
     let $pos1 = $paddle1.css('top');
     let $pos2 = $paddle2.css('top'); 
@@ -85,22 +90,26 @@ function moveBall()  {
 
     // top wall
     if($ball.offset().top <= $gameboard.offset().top) {
+        blip1.play()
         ballDown = 1;
     }
     //left wall
     if ($ball.offset().left <= $paddle1.offset().left + $paddle1.width()
         && $ball.offset().top + $ball.width()/2 <= $paddle1.offset().top + $paddle1.height()
         && $ball.offset().top + $ball.width()/2 >= $paddle1.offset().top ){
+        blip2.play()
         ballRight = 1;
     }
     // bottom wall
     if($ball.offset().top + $ball.width() >= $gameboard.offset().top + $gameboard.height()) {
+        blip1.play()
         ballDown = -1;
     }
     // right wall
     if ($ball.offset().left + $ball.width() >= $paddle2.offset().left
         && $ball.offset().top + $ball.width()/2 <= $paddle2.offset().top + $paddle2.height()
         && $ball.offset().top + $ball.width()/2 >= $paddle2.offset().top){
+        blip2.play()
         ballRight = -1;
     }
 
@@ -108,11 +117,13 @@ function moveBall()  {
         addPoint2()
         ballRight = -1
         serveBall()
+       
     }
     if($ball.offset().left >= $gameboard.offset().left + $gameboard.width() ){
         addPoint1()
         ballRight = 1
         serveBall()
+
     }
 }
 
@@ -120,13 +131,40 @@ function serveBall () {
     var randomTop = Math.round(Math.random() * $gameboard.height() - $ball.height())
     $ball.css({left: 442, top: randomTop})
 }
+
+function addPoint1() {
+    score1++
+    $player1.text(score1)
+    didPlayer1Win();
     
-function startGame() {
-    setInterval(moveBall, 1); ////the interval is what was causing ball to bounce rapidly
-    $paddle.css("top","250px"); 
+}
+function didPlayer1Win () {
+    if (score1 >= 5) {
+        clearInterval(ballSpeed)
+        alert("Player 1 Wins!")
+        resetGame()}
+}
+function addPoint2() { 
+    score2++
+    $player2.text(score2)
+    didPlayer2Win();
+}
+function didPlayer2Win () {
+    if (score2 >= 5) {
+        clearInterval(ballSpeed)
+        alert("Player 2 Wins!")
+        resetGame()}
     }
 
-    $start.on("click", startGame)
-    //.off
+function resetGame () {   
+    $ball.css({left: 442, top: 300})
+    $paddle.css("top","250px"); 
+    $player1.text(0)
+    $player2.text(0)
+    score1 = 0
+    score2 = 0
+}
 
-//// 5. add controls to game page
+
+
+    
