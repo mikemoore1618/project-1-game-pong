@@ -5,7 +5,7 @@ https://mikemoore1618.github.io/project-1-game-pong/
 
 Pong is a two-dimensional sports game that simulates table tennis, or Ping Pong. 
 
-![alt text](https://i.imgur.com/HxCpqbY.png)
+![alt text](https://i.imgur.com/3lH33mo.png)
 
 ### Rules
 
