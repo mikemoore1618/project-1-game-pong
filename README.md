@@ -4,7 +4,7 @@ Pong
 
 Pong is a two-dimensional sports game that simulates table tennis, or Ping Pong. 
 
-![alt text](https://i.imgur.com/aoubrAY.png)
+![alt text](https://i.imgur.com/HxCpqbY.png)
 
 Rules:
 
