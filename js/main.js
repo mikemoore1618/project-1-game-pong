@@ -16,41 +16,11 @@ let ballSpeed
 let blip1 = new Audio("./audio/pongblip1.wav")
 let blip2 = new Audio("./audio/pongblip2.wav")
 
-function addPoint1() {
-    score1 = score1++
-    $player1.text(score1)
-    score1++;
-    didPlayer1Win();
-}
-function didPlayer1Win () {
-    if (score1 >= 6) {
-        alert("Player 1 Wins!")};
-        // resetGame()
-}
-function addPoint2() { 
-    score2= score2++
-    $player2.text(score2)
-    score2++;
-    didPlayer2Win();
-}
-function didPlayer2Win () {
-    if (score2 >= 6) {
-        alert("Player 2 Wins!")};
-        // resetGame()
- }
 
-// function resetGame () {
-//     $ball.css({left: 442, top: 300});
-//     $paddle.css("top","250px");  
-//     clearInterval(ballMove),//stop moving 
-//     disableBallMove()
-//     // $player1.text(0)
-//     // $player2.text(0)
-// }
-
-// function disableBallMove() {
-//     $start.off("click", startGame)
-// }
+function startGame() {
+    ballSpeed = setInterval(moveBall, 1);
+    $paddle.css("top","250px"); 
+}
 
     $start.on("click", startGame)
 
