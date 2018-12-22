@@ -9,7 +9,7 @@ Pong is a two-dimensional sports game that simulates table tennis, or Ping Pong.
 
 ### Rules
 
-Each player controls a paddle by moving it vertically up and down the left or right side of the screen. Players can compete against another player controlling a second paddle on the opposing side. Players use the paddles to hit a ball back and forth across the screen. The goal is for each player to score 5 points before their opponent; points are earned when one fails to return the ball to the other side.
+Two players compete against eachother by controlling a paddle by moving it vertically up and down the left or right side of the screen. Players use the paddles to hit a moving ball back and forth across the screen. The goal is for each player to score 5 points before their opponent; points are earned when one fails to return the ball to the other side.
 
 
 ### Controls
@@ -33,4 +33,5 @@ Explanations of the technologies used:
 
 ### Backlog
 
-My biggest hurdle was getting the ball to bounce around the gameboard. After I got that, it was pretty much smooth sailing. Features I would like to add in the future are different difficulty levels and a 1 player mode where you can battle an AI bot. 
+My biggest hurdle was getting the ball to move and bounce around the gameboard. 
+Features I would like to add in the future are different difficulty levels and a 1 player mode where you can battle an AI bot. 
