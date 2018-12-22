@@ -15,13 +15,13 @@ body {
 #start {
     margin: auto;
     margin-top: 20px;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     background-color: rgb(155, 250, 60);
     border: none;
-    border-radius: 50px;
+    border-radius: 60px;
     font-family: Verdana, Tahoma, sans-serif;
-    font-size: 20px;
+    font-size: 14px;
     outline: none;
     
 }
@@ -90,4 +90,8 @@ body {
 h1 {
     font-family: Verdana, Tahoma, sans-serif;
     font-size: 30px;
+}
+
+button {
+    cursor: pointer;
 }
