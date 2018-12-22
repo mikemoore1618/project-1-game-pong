@@ -20,9 +20,9 @@ let blip2 = new Audio("./audio/pongblip2.wav")
 function startGame() {
     ballSpeed = setInterval(moveBall, 2);//runs moveball function, sets interval at 2 millisecond
     $paddle.css("top","250px"); //sets paddles to middle of screen when game starts
-}
+};
 
-    $start.on("click", startGame)//activates start button
+$start.on("click", startGame);//activates start button
 
 $doc.keydown(function(e){
     let $pos1 = $paddle1.css('top');
@@ -51,7 +51,7 @@ $doc.keydown(function(e){
         $paddle1.finish().animate({top: '+=50'});}//moves paddle 1 down at increment of 50px
     break;
     }
-})
+});
 
 ///////////make ball move and bounce
 function moveBall()  {
@@ -93,36 +93,36 @@ function moveBall()  {
         serveBall() //run funtion serveball
 
     }
-}
+};
 
 function serveBall () {
     var randomTop = Math.round(Math.random() * $gameboard.height() - $ball.height())
     $ball.css({left: 442, top: randomTop}) //serve ball from random y height on gameboard
-}
+};
 
 function addPoint1() {
     score1++ //add one point to player 1 score
     $player1.text(score1) //change text to refelct new score
     didPlayer1Win();// run fucntion to check if there is a winner
     
-}
+};
 function didPlayer1Win () {
     if (score1 >= 5) { 
         clearInterval(ballSpeed)//stop moving ball
         alert("Player 1 Wins!")
         resetGame()}
-}
+};
 function addPoint2() { 
     score2++ //add one point to player 2 score
     $player2.text(score2) //change text to reflect new score
     didPlayer2Win();// fun funtion to check if there is a winner
-}
+};
 function didPlayer2Win () {
     if (score2 >= 5) {
         clearInterval(ballSpeed)//stop moving ball
         alert("Player 2 Wins!")
         resetGame()}
-    }
+    };
 
 function resetGame () {   
     $paddle.css("top","250px"); //return paddles to middle
@@ -130,7 +130,7 @@ function resetGame () {
     $player2.text(0)// reset player 2 score text to 0
     score1 = 0//reset score to 0
     score2 = 0// reset score to 0
-}
+};
 
 
 
